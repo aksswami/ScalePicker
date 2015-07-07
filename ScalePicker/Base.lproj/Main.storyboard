@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ScalePicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,54 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtH-PP-rg5">
+                                <rect key="frame" x="16" y="119" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVi-MM-y6M">
+                                <rect key="frame" x="0.0" y="147" width="564" height="162"/>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwd-VV-BW7">
+                                <rect key="frame" x="574" y="147" width="10" height="163"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="fPm-fQ-QXo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uwd-VV-BW7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="GiA-qg-3q5"/>
+                            <constraint firstItem="vVi-MM-y6M" firstAttribute="height" secondItem="Uwd-VV-BW7" secondAttribute="height" id="LxI-Fl-x22"/>
+                            <constraint firstItem="vVi-MM-y6M" firstAttribute="top" secondItem="Uwd-VV-BW7" secondAttribute="top" id="MT1-Gn-KTL"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="vVi-MM-y6M" secondAttribute="bottom" constant="290" id="Qc9-9i-xba"/>
+                            <constraint firstItem="vVi-MM-y6M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="V0m-Fa-Fx3"/>
+                            <constraint firstItem="vVi-MM-y6M" firstAttribute="width" secondItem="Uwd-VV-BW7" secondAttribute="width" id="abf-At-zOb"/>
+                            <constraint firstItem="vVi-MM-y6M" firstAttribute="top" secondItem="EtH-PP-rg5" secondAttribute="bottom" constant="8" id="bsN-Bu-pNZ"/>
+                            <constraint firstItem="Uwd-VV-BW7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="f4u-po-r4i"/>
+                            <constraint firstItem="EtH-PP-rg5" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mbW-YM-yLN"/>
+                            <constraint firstItem="EtH-PP-rg5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="99" id="rjD-wD-Ip7"/>
+                            <constraint firstItem="Uwd-VV-BW7" firstAttribute="leading" secondItem="vVi-MM-y6M" secondAttribute="trailing" constant="10" id="tDz-ND-gD0"/>
+                            <constraint firstItem="EtH-PP-rg5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zDP-AP-vy5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="abf-At-zOb"/>
+                                <exclude reference="f4u-po-r4i"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="EtH-PP-rg5" id="QbI-eu-8aD"/>
+                        <outlet property="myPicker" destination="vVi-MM-y6M" id="gN8-d9-Jb0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="275" y="387"/>
         </scene>
     </scenes>
 </document>
